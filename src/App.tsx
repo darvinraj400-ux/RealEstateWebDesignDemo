@@ -160,21 +160,22 @@ export default function App() {
             </AnimatePresence>
 
             {/* Split layout: filters on left, results on right */}
-            <div className="flex flex-col lg:flex-row gap-6">
+            <div className="flex flex-col lg:flex-row gap-6 lg:items-start">
               {/* Filters sidebar - desktop always visible */}
-              <div className="hidden lg:block lg:w-80 lg:flex-shrink-0">
+              <div className="hidden lg:block lg:w-[340px] lg:flex-shrink-0 lg:min-w-[340px]">
                 <div className="lg:sticky lg:top-24">
                   <SearchFilters
                     filters={filters}
                     updateFilter={updateFilter}
                     resetFilters={resetFilters}
                     resultCount={filteredListings.length}
+                    compact={true}
                   />
                 </div>
               </div>
 
               {/* Results */}
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0 overflow-hidden">
                 {filteredListings.length > 0 ? (
                   <motion.div
                     layout

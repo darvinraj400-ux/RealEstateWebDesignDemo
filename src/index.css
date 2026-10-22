@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 @theme {
   --color-navy: #1a2744;
@@ -77,4 +78,68 @@ input[type="time"] {
 /* Image loading placeholder */
 img {
   background-color: #e8e4df;
+}
+
+/* Leaflet map overrides */
+.leaflet-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #e8e4df;
+  z-index: 0;
+}
+
+.leaflet-control-zoom {
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.leaflet-control-zoom a {
+  color: #1a2744 !important;
+  background: white !important;
+  border-bottom-color: #e5e7eb !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #f9fafb !important;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px !important;
+  background: rgba(255,255,255,0.85) !important;
+  backdrop-filter: blur(4px);
+  padding: 2px 6px !important;
+  border-radius: 4px 0 0 0 !important;
+}
+
+.leaflet-control-attribution a {
+  color: #2d6a4f !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 10px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 8px 12px !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-popup-tip {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Custom price marker - reset leaflet defaults */
+.custom-price-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Ensure map fills container */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
 }
